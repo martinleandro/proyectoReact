@@ -3,23 +3,7 @@ import {useEffect, useState} from 'react'
 import db from '../Firebase.config'
 
 const Categories = (props) => {
-  const Products = [
-    {
-      Id: 1,
-      NombreProducto: 'Teclado',
-      PrecioProducto: '$5000'
-    },
-    {
-      Id: 2,
-      NombreProducto: 'Teclado Gamer',
-      PrecioProducto: '$52000'
-    },
-    {
-      Id: 3,
-      NombreProducto: 'Teclado Azul',
-      PrecioProducto: '$55000'
-    }
-  ]
+  
   
   useEffect(() => {
     let list= [];
@@ -28,13 +12,13 @@ const Categories = (props) => {
       response.forEach(item => {
         console.log(item.data())
         list.push(item.data())
-        
       })
+
       setProductos(list)
     }
   
    getItems();
-  }, [])
+  }, [props.match.params.id])
 
   const [productos, setProductos] = useState([]);
 
@@ -42,7 +26,7 @@ const Categories = (props) => {
     <div>
      Categoria {props.match.params.id}
      {productos.map(prod => {
-       return <Product name={prod.name} price={prod.price} model={prod.model} id={'f3NZHyXEGEGbGW4lfRnt'} />
+       return <Product image={prod.image} name={prod.name} price={prod.price} model={prod.model} id={prod.productid} />
      })}
     </div>
   )

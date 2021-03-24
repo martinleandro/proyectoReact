@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.product-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin: 0 auto;
+  border: 2px solid white;
+  background-color: white;
+  color: black;
+  justify-content: space-around;
+}
+
+.product-detail {
+  display: flex;
+  flex-direction: column;
+  h3 {
+    margin: 3px;
+  }
+}
+
+.img-product {
+  width: 300px;
+  display: inline-block;
+}
+
+.product-image {
+  text-align: center;
+}
+
+.boton-product-detail {
+  text-align: center;
+  background-color: #343a40;
+  color: white;
+}

@@ -1,0 +1,52 @@
+.botones {
+  background-color: #343a40;
+  list-style: none;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  width: 20%;
+  text-transform: uppercase;
+  &:hover {
+    cursor: pointer;
+  }
+} 
+
+.div-menu {
+  width: 100%;
+  overflow: unset;
+    // background-color: #343a40;
+}
+
+.sub-menu {
+  position: absolute;
+  float: none;
+  background-color: #343a40;
+  width: 19.3%;
+}
+
+.links {
+  list-style-type: none;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  text-transform: uppercase;
+  
+}
+
+.lista-menu {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  height: 4vh;
+}
+
+.pegado {
+  position:sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.cart {
+  width: 45px;
+}

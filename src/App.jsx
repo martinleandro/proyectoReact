@@ -6,7 +6,8 @@ import Categories from './routes/Categories';
 import ProductDetail from './routes/ProductDetail';
 import {useEffect} from 'react';
 import db from './Firebase.config'
-
+import Cart from './routes/Cart';
+import CartProvider from './Context/CartContext';
 
 
 
@@ -20,7 +21,6 @@ const App = () => {
       console.log(datos.name)
       console.log(response.docs[0].data())
     }
-  
    getItems();
   }, [])
 
@@ -30,13 +30,14 @@ const App = () => {
   return (
     <BrowserRouter>
       
-      <Header />
-      <Switch> 
-        <Route exact path='/' component={Home} />
-        <Route exact path='/categories/:id' component={Categories}/>
-        <Route exact path='/item/:id' component={ProductDetail} />
-      </Switch>
-    
+        <Header />
+          <Switch> 
+            <Route exact path='/' component={Home} />
+            <Route exact path='/categories/:id' component={Categories}/>
+            <Route exact path='/item/:id' component={ProductDetail} />
+            <Route exact path='/cart' component={Cart} />
+          </Switch>
+      
     </BrowserRouter>
   );
 }

@@ -1,8 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Link } from 'react-router-dom';
+import './Menu.scss'
+import cartImage from "../../img/cart.png"
+import {CartContext} from '../../Context/CartContext';
 
 
 const Menu = () => {
+
+  const cart = useContext(CartContext)
 
   const [menuExpandido, setMenuExpandido] = useState(false)
   
@@ -20,17 +25,25 @@ const Menu = () => {
   
 
   return (
-    <div>
-      <button><Link to='/'>Home</Link></button>
-      <button onClick={clickBotonCategorias}>Categorias</button>
-      {menuExpandido && 
-      <nav>
-        <ul>
-          <li><Link to='/categories/teclados'>Teclados</Link></li>
-          <li><Link to='/categories/2'>Mouse</Link></li>
-          <li><Link to='/categories/3'>Monitores</Link></li>
+    <div className="div-menu">
+      <nav className="pegado">
+        <ul className="lista-menu">
+          <li className="botones"><Link className="links" to='/'>Home</Link></li>
+          <li onClick={clickBotonCategorias} className="botones links" >Categorias
+          {menuExpandido && 
+          <nav className="sub-menu">
+            <ul>
+              <li className="links"><Link className="links" to='/categories/teclados'>Teclados</Link></li>
+              <li className="links"><Link className="links" to='/categories/video'>Placas de video</Link></li>
+              <li className="links"><Link className="links" to='/categories/monitor'>Monitores</Link></li>
+            </ul>
+            </nav>}
+          </li>
+          <li className="botones"><Link className="links" to=''>Contacto</Link></li>
+          <li className="botones"><Link className="links" to='/'>Nosotros</Link></li>
+          <li className="links"><Link to='/cart'><img className="cart" src={cartImage} alt=""/>{cart.cantidadCart}</Link></li>
         </ul>
-      </nav>}
+      </nav>
     </div>
   )
 }
