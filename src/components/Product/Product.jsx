@@ -32,7 +32,7 @@ const Product = (props) => {
         <h3 className="boton-product-detail"><Link className="links" to={{
         pathname: '/item/' + props.id
         }}>Detalle</Link></h3>
-        <button onClick={agregarCarrito}>Agregar</button>
+        <h3 className="boton-product-detail" onClick={agregarCarrito}>Agregar</h3>
       </div>
     </div>
     </div>

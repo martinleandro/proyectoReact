@@ -24,7 +24,7 @@
 }
 
 .img-product {
-  width: 300px;
+  width: 100%;
   display: inline-block;
 }
 
@@ -33,7 +33,11 @@
 }
 
 .boton-product-detail {
+  text-transform: uppercase;
   text-align: center;
   background-color: #343a40;
   color: white;
+  &:hover {
+    cursor: pointer;
+  }
 }

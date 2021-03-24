@@ -18,16 +18,14 @@ const Cart = () => {
           <h2>Cantidad: {product.quantity}</h2>
           <h3>Precio: ${product.price}</h3>
           <h3>Precio total: ${product.quantity*product.price}</h3>
-
-          <div>
-          Total Elementos: {cartContext.cantidadCart}
-          Total Compra: ${cartContext.totalCarrito}
-          </div>
          </div>
             
 
       ))}
-
+        <div className="total-compra">
+          Total Elementos: {cartContext.cantidadCart}<br/>
+          Total Compra: ${cartContext.totalCarrito}
+        </div>
           
       
     </div>

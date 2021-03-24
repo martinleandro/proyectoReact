@@ -41,7 +41,7 @@ const Menu = () => {
           </li>
           <li className="botones"><Link className="links" to=''>Contacto</Link></li>
           <li className="botones"><Link className="links" to='/'>Nosotros</Link></li>
-          <li className="links"><Link to='/cart'><img className="cart" src={cartImage} alt=""/>{cart.cantidadCart}</Link></li>
+          <li className="links"><Link className="cantidad-carrito" to='/cart'><img className="cart" src={cartImage} alt=""/>{cart.cantidadCart}</Link></li>
         </ul>
       </nav>
     </div>

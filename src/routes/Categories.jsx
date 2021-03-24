@@ -24,7 +24,7 @@ const Categories = (props) => {
 
   return (
     <div>
-     Categoria {props.match.params.id}
+     <h3 className="boton-product-detail">Categoria {props.match.params.id}</h3> 
      {productos.map(prod => {
        return <Product image={prod.image} name={prod.name} price={prod.price} model={prod.model} id={prod.productid} />
      })}
